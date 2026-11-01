@@ -26,12 +26,18 @@ It sets up:
 
 ## Install
 
-Log in to the VPS's public address once, then run:
+This repo is private, so the download needs a GitHub token. Create a fine-grained token with
+**Contents: read** on this repo only, and a short expiry. Log in to the VPS's public address once,
+then run:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/rizaardiyanto1412/t3-vps/main/setup.sh \
+read -rs GH_TOKEN   # paste the token, then Enter; it is not shown or saved in history
+curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.raw" \
+  https://api.github.com/repos/rizaardiyanto1412/t3-vps/contents/setup.sh \
   | sudo bash -s -- --tailscale-key tskey-auth-...
 ```
+
+The token is only used for this download. Delete it on GitHub afterwards.
 
 At the end it prints:
 

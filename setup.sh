@@ -3,7 +3,8 @@
 # Tailscale: T3 Code, T3 Bridge, Claude Code and Codex behind a local CLIProxyAPI, pstack, and a
 # firewall that only lets your tailnet in. Safe to run again.
 #
-#   curl -fsSL https://raw.githubusercontent.com/rizaardiyanto1412/t3-vps/main/setup.sh \
+#   curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.raw" \
+#     https://api.github.com/repos/rizaardiyanto1412/t3-vps/contents/setup.sh \
 #     | sudo bash -s -- --tailscale-key tskey-auth-...
 set -euo pipefail
 
